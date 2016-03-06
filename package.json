@@ -1,0 +1,19 @@
+{
+  "name": "pandasvganimation",
+  "version": "1.0.0",
+  "description": "Playing with css animation on svg",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dleroux/pandasvg.git"
+  },
+  "author": "dleroux",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dleroux/pandasvg/issues"
+  },
+  "homepage": "https://github.com/dleroux/pandasvg#readme"
+}
