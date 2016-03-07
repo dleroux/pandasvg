@@ -1,19 +1,24 @@
 {
-  "name": "pandasvganimation",
+  "name": "pandasvg",
   "version": "1.0.0",
-  "description": "Playing with css animation on svg",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dleroux/pandasvg.git"
   },
-  "author": "dleroux",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/dleroux/pandasvg/issues"
   },
-  "homepage": "https://github.com/dleroux/pandasvg#readme"
+  "homepage": "https://github.com/dleroux/pandasvg#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0"
+  }
 }

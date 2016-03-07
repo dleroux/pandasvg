@@ -1,0 +1,100 @@
+/*animation mixin*/
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+@mixin animation($str) {
+	-webkit-animation: #{$str};
+	-moz-animation: #{$str};
+	-ms-animation: #{$str};
+	-o-animation: #{$str};
+	animation: #{$str};
+}
+/*box mixin*/
+@mixin box-sizing($box-model) {
+	-webkit-box-sizing: $box-model; // Safari <= 5
+	-moz-box-sizing: $box-model; // Firefox <= 19
+	box-sizing: $box-model;
+}
+
+
+/*
+@include keyframes(slide-down) {
+  0% { opacity: 1; }
+  90% { opacity: 0; }
+}
+svg #right-ear{
+	@include animation('slide-down 5s 3');
+}
+*/
+
+/*
+#left-ear
+#right-ear
+#head
+#right-eye
+#left-eye
+#nose*/
+body{
+	margin: 0;
+	padding: 0;
+
+}
+svg {
+	height: 100vh;
+	width: 100vw;
+	border: 10px solid #FFCCCC;
+	@include box-sizing(border-box)
+}
+#controls{
+	position: absolute;
+	bottom: 30px;
+	left: 30px;
+}
+@for $i from 1 through 6{
+  svg.implode g:nth-child(#{$i}){
+    @include animation(implode#{$i} 1s ease-out 1 forwards);
+  }
+   svg.explode g:nth-child(#{$i}){
+    @include animation(explode#{$i} 1s ease-out 1 forwards);
+  }
+  @include keyframes(implode#{$i}) {
+	0%{
+      transform: translate(random(700) - 350 + px, random(700) - 350 + px);
+      opacity: 0;
+    }
+    25%{
+     opacity: .1;
+    }
+    100%{
+      transform: translate(0,0);
+      opacity: 1;
+    }
+  }
+  @include keyframes(explode#{$i}) {
+	0%{
+      transform: translate(0,0);
+      opacity: 1;
+    }
+    25%{
+     opacity: .1;
+    }
+    100%{
+      transform: translate(random(700) - 350 + px, random(700) - 350 + px);
+      opacity: 0;
+    }
+  }
+}
